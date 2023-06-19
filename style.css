@@ -55,17 +55,22 @@ div{
 
     position: fixed;
     height: 80%;
-    width: 500px;
-    right: 0;
+    width: 40vw;
+    right: -30vw;
     z-index: 1;
 }
 
+.side.active{
+    right: 0;
+}
+
 .add-book, .side-panel{
-    background-color: #c0b3b3;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px 0 0 10px;
 }
 
 .add-book{
-    flex: 0.4;
+    flex: 1;
     min-height: 15vh;
     max-width: 3rem;
     align-self: center;
@@ -73,6 +78,5 @@ div{
 
 .side-panel{
     flex: 1;
-    height: 80%;
-    
+    height: 90%;
 }
