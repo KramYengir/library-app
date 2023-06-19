@@ -33,5 +33,14 @@ div{
     max-height: 80%;
 
     display: grid;
-    grid-template: repeat(auto, 1fr), repeat(auto, minmax(0.25fr, 0.5fr));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.book{
+    max-width: 250px;
+    max-height: 300px;
 }
