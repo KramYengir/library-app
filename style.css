@@ -56,12 +56,14 @@ div{
     position: fixed;
     height: 80%;
     width: 40vw;
-    right: -30vw;
+    right: -35vw;
     z-index: 1;
+    transition: 0.3s;
 }
 
 .side.active{
     right: 0;
+    transition: 0.3s;
 }
 
 .side-collar, .side-panel{
