@@ -1,0 +1,27 @@
+:root{
+    --guide-border: 1px solid red;
+}
+
+body{
+    height: 100vh;
+}
+
+div{
+    border: var(--guide-border);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header{
+    flex: 0.1;
+}
+
+.main{
+    flex: 1;
+}
+
+
