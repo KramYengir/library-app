@@ -4,6 +4,8 @@
 
 body{
     height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 div{
@@ -17,13 +19,13 @@ div{
 }
 
 .header{
-    flex: 0.1;
+    flex: 0.15;
 }
 
 .main{
     display: flex;
     flex: 1;
-    justify-content: center;
+    justify-content: space-between;
     /* align-items: center; */
 }
 
@@ -37,10 +39,40 @@ div{
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-content: center;
     gap: 2rem;
-    margin-top: 2rem;
+    margin: 2rem auto 1rem;
 }
 
 .book{
     max-width: 250px;
     max-height: 300px;
+}
+
+.side{
+    /* flex: 0.1; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    position: fixed;
+    height: 80%;
+    width: 500px;
+    right: 0;
+    z-index: 1;
+}
+
+.add-book, .side-panel{
+    background-color: #c0b3b3;
+}
+
+.add-book{
+    flex: 0.4;
+    min-height: 15vh;
+    max-width: 3rem;
+    align-self: center;
+}
+
+.side-panel{
+    flex: 1;
+    height: 80%;
+    
 }
