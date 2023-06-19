@@ -21,7 +21,17 @@ div{
 }
 
 .main{
+    display: flex;
     flex: 1;
+    justify-content: center;
+    /* align-items: center; */
 }
 
 
+.book-display{
+    flex: 0.8;
+    max-height: 80%;
+
+    display: grid;
+    grid-template: repeat(auto, 1fr), repeat(auto, minmax(0.25fr, 0.5fr));
+}
