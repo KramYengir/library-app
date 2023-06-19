@@ -64,12 +64,12 @@ div{
     right: 0;
 }
 
-.add-book, .side-panel{
+.side-collar, .side-panel{
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 10px 0 0 10px;
 }
 
-.add-book{
+.side-collar{
     flex: 1;
     min-height: 15vh;
     max-width: 3rem;
