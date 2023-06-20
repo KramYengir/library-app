@@ -32,6 +32,7 @@ function createBookFromForm(){
     let newBook = new Book(title, author, pages, genre, summary, false);
 
     addBookToLibrary(newBook);
+    addBookToDisplay(createBookElement(newBook));
 }
 
 function addBookToLibrary(book){
@@ -54,19 +55,10 @@ function clearForm(){
     summaryInput.value = '';
 }
 
-//Display books on page
-function displayBooks(){
-
-    //Clear the display first...
-    while(bookDisplay.firstChild){
-        bookDisplay.firstChild.remove();
-    }
-
-    library.forEach((book)=>{
-        bookDisplay.appendChild(createBookElement(book))
-    })
-
+function addBookToDisplay(book){
+    bookDisplay.appendChild(book);
 }
+
 
 function createBookElement(book){
     let bookDiv = document.createElement('div');
@@ -91,6 +83,10 @@ function createBookElement(book){
     let summary = document.createElement('div');
     summary.classList.add('book-summary');
     summary.textContent = book.summary;
+
+   /*  let read = document.createElement('button');
+    read.classList.add('book-read');
+    read.textContent = 'read' */
 
     bookDiv.appendChild(title);
     bookDiv.appendChild(author);
@@ -118,9 +114,7 @@ form.addEventListener('submit', (e)=>{
 
     createBookFromForm();
 
-    displayBooks();
-
-    //Clear form and collapse side panel
+    //Clear form 
     clearForm();
 })
 
