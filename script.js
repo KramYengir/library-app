@@ -22,10 +22,6 @@ let Book = function(title, author, pages, genre, summary, read){
     this.read = read
 }
 
-let newBook = new Book('The Hunters', 'Jim', 256, 'Horror', 'Really scary', false);    
-
-
-
 function createBookFromForm(){
     let title = titleInput.value;
     let author = authorInput.value;
@@ -60,6 +56,11 @@ function clearForm(){
 
 //Display books on page
 function displayBooks(){
+
+    //Clear the display first...
+    while(bookDisplay.firstChild){
+        bookDisplay.firstChild.remove();
+    }
 
     library.forEach((book)=>{
         bookDisplay.appendChild(createBookElement(book))
@@ -100,6 +101,15 @@ function createBookElement(book){
     return bookDiv;
 }
 
+function toggleEmptyLibraryImg(){
+    if((library.length == 0) && !side.classList.contains('active')){
+        bookDisplay.classList.add('empty');
+    }
+    else{
+        bookDisplay.classList.remove('empty');
+    }
+}
+
 //This prevents the form from submitting
 //but keeps form validation, so we'll use this
 //instead of a click event on the button
@@ -117,4 +127,9 @@ form.addEventListener('submit', (e)=>{
 
 sideCollar.addEventListener('click', ()=>{
     side.classList.toggle('active');
+    toggleEmptyLibraryImg();
 })
+
+document.addEventListener("DOMContentLoaded", function() {
+    toggleEmptyLibraryImg();
+  });
