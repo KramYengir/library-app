@@ -1,12 +1,15 @@
 const sideCollar = document.querySelector('.side-collar');
 const side = document.querySelector('.side');
-const addBookButton = document.querySelector('#add-book-button')
+const bookDisplay = document.querySelector('.book-display');
+
+//Form input elements
 const form = document.querySelector('form');
 const titleInput = document.querySelector('#title');
 const authorInput = document.querySelector('#author');
 const pagesInput = document.querySelector('#pages');
 const genreInput = document.querySelector('#genre');
 const summaryInput = document.querySelector('#summary');
+const addBookButton = document.querySelector('#add-book-button')
 
 let library = [];
 
@@ -53,6 +56,39 @@ function clearForm(){
     pagesInput.value = '';
     genreInput.value = '';
     summaryInput.value = '';
+}
+
+//Display books on page
+function displayBooks(){
+
+}
+
+function createBookElement(book){
+    let bookDiv = document.createElement('div');
+    bookDiv.classList.add('book');
+
+    let title = document.createElement('div');
+    title.textContent = book.title;
+
+    let author = document.createElement('div');
+    author.textContent = 'by '+book.author;
+
+    let pages = document.createElement('div');
+    pages.textContent = book.pages;
+
+    let genre = document.createElement('div');
+    genre.textContent = book.genre;
+
+    let summary = document.createElement('div');
+    summary.textContent = book.summary;
+
+    bookDiv.appendChild(title);
+    bookDiv.appendChild(author);
+    bookDiv.appendChild(pages);
+    bookDiv.appendChild(genre);
+    bookDiv.appendChild(summary);
+
+    return bookDiv;
 }
 
 //This prevents the form from submitting
