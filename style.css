@@ -23,6 +23,7 @@ div{
 
 .header{
     flex: 0.15;
+    min-height: 15vh;
 }
 
 .main{
