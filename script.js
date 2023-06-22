@@ -91,10 +91,11 @@ function createBookElement(book){
 
     let readDiv = document.createElement('div');
     readDiv.classList.add('read-div');
-    let readButton = document.createElement('button');
+    readDiv.textContent = getBookReadStatus(book);
+  /*   let readButton = document.createElement('button');
     readButton.classList.add('read-button');
     readButton.textContent = 'read'
-    readDiv.appendChild(readButton);
+    readDiv.appendChild(readButton); */
 
     bookDiv.appendChild(title);
     bookDiv.appendChild(author);
@@ -105,7 +106,12 @@ function createBookElement(book){
 
     return bookDiv;
 }
-
+function getBookReadStatus(book){
+    if(book.read){
+        return 'Read'
+    }
+    else return 'Unread';
+}
 function loadExampleLibrary(amount = 6){
     for(let i=0; i<amount; i++){
         let newBook = new Book('Jumanji', 'Dave Batista', 256, 'Comedy', 
