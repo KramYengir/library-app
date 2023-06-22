@@ -22,6 +22,10 @@ let Book = function(title, author, pages, genre, summary, read){
     this.read = read
 }
 
+Book.prototype.changeReadStatus = function(){
+    this.read = !this.read;
+}
+
 function createBookFromForm(){
     let title = titleInput.value;
     let author = authorInput.value;
