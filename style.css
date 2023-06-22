@@ -225,11 +225,12 @@ input{
     height: 1.5rem;
     font-size: medium;
     padding-left: 0.6rem;
-    background-color: rgb(240, 214, 255);
+    /* background-color: rgb(240, 214, 255); */
     border-radius: 5px;
 }
 
 textarea{
+    font-size: medium;
     padding: 0.3rem;
 }
 
