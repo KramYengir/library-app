@@ -133,10 +133,25 @@ div{
 
 .side-collar{
     flex: 1;
-    min-height: 15vh;
+    min-height: 18vh;
     max-width: 3rem;
     min-width: 2rem;
     align-self: center;
+
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.side-collar > div{
+    min-width: 100px;
+    transform: rotate(-90deg);
+    margin-bottom: 0.8rem;
+
+    color: #f1f1f1;
+    text-transform: uppercase;
 }
 
 .side-panel{
