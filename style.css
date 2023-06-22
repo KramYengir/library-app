@@ -4,9 +4,9 @@
     --guide-border: 1px solid rgba(241, 56, 56, 0);
 
     --light-purple: #B61DEC;
-    --dark-puple: #46025f;
+    --dark-puple: rgb(70, 2, 95);
 
-    --book-color: rgb(248, 236, 253);
+    --book-color: rgb(254, 253, 255);
     
     --side-panel-background: rgba(71, 0, 97, 0.9);
     --side-collar-background:  rgba(123, 0, 168, 0.651);
@@ -84,9 +84,15 @@ div{
 
     max-width: 250px;
     max-height: 350px;
-    border: 1px solid black;
+    border: 1.5px solid rgb(0, 0, 0);
     border-radius: 2px 15px 15px 2px;
     background-color: var(--book-color);
+    box-shadow: 8px 8px 8px 1px rgba(0, 0, 0, 0.2);
+}
+
+.book:hover{
+    scale: 1.05;
+    transition: 0.3s;
 }
 
 .book > div{
@@ -131,10 +137,14 @@ div{
     align-items: center;
     background-color: #85d382;
     border-radius: 0 0 15px 0;
+    text-transform: uppercase;
+    transition: 0.3s;
+
 }
 
 .read-div.unread{
     background-color: #d39282;
+    transition: 0.3s;
 }
 
 .side{
@@ -215,6 +225,8 @@ input{
     height: 1.5rem;
     font-size: medium;
     padding-left: 0.6rem;
+    background-color: rgb(240, 214, 255);
+    border-radius: 5px;
 }
 
 textarea{
