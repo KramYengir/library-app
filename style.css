@@ -2,6 +2,10 @@
 
 :root{
     --guide-border: 1px solid rgba(241, 56, 56, 0);
+
+    --light-purple: #B61DEC;
+    --dark-puple: #46025f;
+    --side-background: rgba(71, 0, 97, 0.8);
 }
 
 body{
@@ -24,7 +28,7 @@ div{
 .header{
     flex: 0.15;
     min-height: 12vh;
-    border-bottom: 2px solid #B61DEC;
+    border-bottom: 2px solid var(--light-purple);
 
     display: flex;
     justify-content: center;
@@ -36,7 +40,7 @@ div{
 }
 
 .title-b{
-    color: #B61DEC;
+    color: var(--light-purple);
 }
 
 .main{
@@ -127,7 +131,7 @@ div{
 }
 
 .side-collar, .side-panel{
-    background-color: rgba(71, 0, 97, 0.5);
+    background-color: var(--side-background);
     border-radius: 10px 0 0 10px;
 }
 
