@@ -126,8 +126,15 @@ div{
 }
 
 .read-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #85d382;
     border-radius: 0 0 15px 0;
+}
+
+.read-div.unread{
+    background-color: #d39282;
 }
 
 .side{
