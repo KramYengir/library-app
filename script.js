@@ -95,11 +95,15 @@ function createBookElement(book){
 
     let readDiv = document.createElement('div');
     readDiv.classList.add('read-div');
+    if(!book.read){
+        readDiv.classList.add('unread');
+    }
     readDiv.textContent = getBookReadStatus(book);
-  /*   let readButton = document.createElement('button');
-    readButton.classList.add('read-button');
-    readButton.textContent = 'read'
-    readDiv.appendChild(readButton); */
+    readDiv.addEventListener('click', ()=>{
+        book.changeReadStatus();
+        readDiv.classList.toggle('unread');
+        readDiv.textContent = getBookReadStatus(book);
+    })
 
     bookDiv.appendChild(title);
     bookDiv.appendChild(author);
