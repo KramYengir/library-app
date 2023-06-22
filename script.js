@@ -84,15 +84,19 @@ function createBookElement(book){
     summary.classList.add('book-summary');
     summary.textContent = book.summary;
 
-   /*  let read = document.createElement('button');
-    read.classList.add('book-read');
-    read.textContent = 'read' */
+    let readDiv = document.createElement('div');
+    readDiv.classList.add('read-div');
+    let readButton = document.createElement('button');
+    readButton.classList.add('read-button');
+    readButton.textContent = 'read'
+    readDiv.appendChild(readButton);
 
     bookDiv.appendChild(title);
     bookDiv.appendChild(author);
     bookDiv.appendChild(pages);
     bookDiv.appendChild(genre);
     bookDiv.appendChild(summary);
+    bookDiv.appendChild(readDiv);
 
     return bookDiv;
 }
