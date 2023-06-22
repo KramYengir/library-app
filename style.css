@@ -5,8 +5,11 @@
 
     --light-purple: #B61DEC;
     --dark-puple: #46025f;
-    --side-background: rgba(71, 0, 97, 0.8);
+
     --book-color: rgb(248, 236, 253);
+    
+    --side-panel-background: rgba(71, 0, 97, 0.9);
+    --side-collar-background:  rgba(123, 0, 168, 0.651);
 }
 
 body{
@@ -72,19 +75,28 @@ div{
 }
 
 .book{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start; */
+    display: grid;
+    grid-template: 1fr 0.5fr 0.5fr 0.5fr 2fr 1fr / 1fr;
+    gap: 0.5rem;
 
     max-width: 250px;
     max-height: 350px;
     border: 1px solid black;
-    border-radius: 2px 10px 10px 2px;
+    border-radius: 2px 15px 15px 2px;
     background-color: var(--book-color);
 }
 
 .book > div{
-    margin: 0.8rem;
+    /* margin: 0.8rem; */
+}
+
+.book-title, .book-author,
+.book-pages, .book-genre,
+.book-summary{
+    padding: 0.5rem;
 }
 
 .book-title{
@@ -114,8 +126,8 @@ div{
 }
 
 .read-div{
-    flex: 1;
-    background-color: #5a9258;
+    background-color: #85d382;
+    border-radius: 0 0 15px 0;
 }
 
 .side{
@@ -138,7 +150,6 @@ div{
 }
 
 .side-collar, .side-panel{
-    background-color: var(--side-background);
     border-radius: 10px 0 0 10px;
 }
 
@@ -148,6 +159,7 @@ div{
     max-width: 3rem;
     min-width: 2rem;
     align-self: center;
+    background-color: var(--side-collar-background);
 
     display: flex;
     /* flex-direction: column; */
@@ -172,6 +184,7 @@ div{
     grid-template: 0.8fr / 0.6fr;
     justify-content: center;
     align-items: center;
+    background-color: var(--side-panel-background);
 }
 
 form{
