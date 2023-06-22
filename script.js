@@ -32,7 +32,9 @@ function createBookFromForm(){
     let newBook = new Book(title, author, pages, genre, summary, false);
 
     addBookToLibrary(newBook);
-    addBookToDisplay(createBookElement(newBook));
+    /* addBookToDisplay(createBookElement(newBook)); */
+
+    refreshBookDisplay();
 }
 
 function addBookToLibrary(book){
@@ -55,8 +57,11 @@ function clearForm(){
     summaryInput.value = '';
 }
 
-function addBookToDisplay(book){
-    bookDisplay.appendChild(book);
+function refreshBookDisplay(){
+    library.forEach((book) =>{
+        let bookElement = createBookElement(book);
+        bookDisplay.appendChild(bookElement);
+    })
 }
 
 
@@ -99,6 +104,18 @@ function createBookElement(book){
     bookDiv.appendChild(readDiv);
 
     return bookDiv;
+}
+
+function loadExampleLibrary(amount = 6){
+    for(let i=0; i<amount; i++){
+        let newBook = new Book('Jumanji', 'Dave Batista', 256, 'Comedy', 
+                                'Madcap comedy about a bunch of mad animals running around the place',
+                                false);
+        library.push(newBook);
+    }
+
+    refreshBookDisplay();
+    toggleEmptyLibraryImg();
 }
 
 function toggleEmptyLibraryImg(){
