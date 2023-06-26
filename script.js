@@ -88,10 +88,9 @@ function createBookElement(book){
     let removeButton = document.createElement('button');
     removeButton.classList.add('remove-button');
     removeButton.textContent = 'X';
-    removeButton.addEventListener('click', (book) =>{
-        let index = removeButton.parentElement.parentElement.dataset.index;
-        removeBookFromlibrary(index);
-        refreshBookDisplay();
+    removeButton.addEventListener('click', () =>{
+       let index = removeButton.parentElement.parentElement.dataset.index;
+       removeBookFromDisplay(index);
     })
 
     bookTopDiv.appendChild(title);
@@ -160,6 +159,11 @@ function toggleEmptyLibraryImg(){
     else{
         bookDisplay.classList.remove('empty');
     }
+}
+
+function removeBookFromDisplay(index){
+    removeBookFromlibrary(index);
+    refreshBookDisplay();
 }
 
 //This prevents the form from submitting
