@@ -89,8 +89,11 @@ function createBookElement(book){
     removeButton.classList.add('remove-button');
     removeButton.textContent = 'X';
     removeButton.addEventListener('click', () =>{
-       let index = removeButton.parentElement.parentElement.dataset.index;
-       removeBookFromDisplay(index);
+       if(confirm('Are you sure?')){
+        let index = removeButton.parentElement.parentElement.dataset.index;
+        removeBookFromDisplay(index);
+       }
+       else return;
     })
 
     bookTopDiv.appendChild(title);
