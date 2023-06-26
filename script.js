@@ -86,6 +86,16 @@ function refreshBookDisplay(){
                 return -1 * a.title.localeCompare(b.title);
             });
             break;
+        case 'shortest':
+            sortedLibrary = library.sort( (a,b)=>{
+            return a.pages - b.pages;
+            });
+            break;
+        case 'longest':
+            sortedLibrary = library.sort( (a,b)=>{
+            return b.pages - a.pages;
+        });
+        break;
         default:
             sortedLibrary = library;
     }
@@ -209,6 +219,7 @@ form.addEventListener('submit', (e)=>{
     clearForm();
 })
 
+sortOption.addEventListener('click', refreshBookDisplay);
 
 sideCollar.addEventListener('click', ()=>{
     side.classList.toggle('active');
