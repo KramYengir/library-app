@@ -73,9 +73,19 @@ function createBookElement(book){
     let bookDiv = document.createElement('div');
     bookDiv.classList.add('book');
 
+    let bookTopDiv = document.createElement('div');
+    bookTopDiv.classList.add('book-top')
+
     let title = document.createElement('div');
     title.classList.add('book-title');
     title.textContent = book.title;
+
+    let removeButton = document.createElement('button');
+    removeButton.classList.add('remove-button');
+    removeButton.textContent = 'X';
+
+    bookTopDiv.appendChild(title);
+    bookTopDiv.appendChild(removeButton);
 
     let author = document.createElement('div');
     author.classList.add('book-author');
@@ -105,7 +115,7 @@ function createBookElement(book){
         readDiv.textContent = getBookReadStatus(book);
     })
 
-    bookDiv.appendChild(title);
+    bookDiv.appendChild(bookTopDiv);
     bookDiv.appendChild(author);
     bookDiv.appendChild(pages);
     bookDiv.appendChild(genre);

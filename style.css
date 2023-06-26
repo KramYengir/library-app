@@ -105,10 +105,33 @@ div{
     padding: 0.5rem;
 }
 
+.book-top{
+    display: flex;
+    justify-content: space-between;
+}
+
 .book-title{
     font-weight: 600;
     font-size: 1.5rem;
 }
+
+.remove-button{
+    max-height: 90%;
+    font-size: 1rem;
+    align-self: center;
+    margin-right: 1rem;
+    border: none;
+    background-color: #fff;
+    transition: 0.2s;
+}
+
+.remove-button:hover{
+    color: red;
+    scale: 1.8;
+   /*  transform: rotate(0.5turn); */
+    transition: 0.2s;
+}
+
 .book-author{
     font-size: 0.8rem;
 }
