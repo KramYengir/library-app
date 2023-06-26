@@ -47,6 +47,25 @@ div{
     color: var(--light-purple);
 }
 
+.sort-option{
+    background-color: #f1f1f1;
+    padding-top: 1rem;
+}
+
+.sort-option label{
+    color: var(--dark-puple);
+    margin: 0 0.5rem 0 2rem;
+}
+
+.sort-option select{
+    border-radius: 5px;
+    border: 1px solid var(--dark-puple);
+    padding: 0.3rem;
+    min-height: 1.5rem;
+    background-color: white;
+    font-size: 0.9rem;
+}
+
 .main{
     display: flex;
     flex: 1;
@@ -62,9 +81,13 @@ div{
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-columns: repeat(auto-fit, minmax(250px, 0.3fr));
-    justify-content: start;
     gap: 2rem;
     margin: 2rem auto 1rem;
+
+    .sort-option label{
+        color: var(--dark-puple);
+        margin: 2rem 0.5rem 0 2rem;
+    }
 }
 
 .book-display.empty{

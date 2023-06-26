@@ -2,6 +2,8 @@ const sideCollar = document.querySelector('.side-collar');
 const side = document.querySelector('.side');
 const bookDisplay = document.querySelector('.book-display');
 
+const sortOption = document.querySelector('select');
+
 //Form input elements
 const form = document.querySelector('form');
 const titleInput = document.querySelector('#title');
@@ -67,7 +69,28 @@ function refreshBookDisplay(){
         bookDisplay.firstChild.remove();
     }
 
-    library.forEach((book) =>{
+    let sortedLibrary;
+
+    //determine if sorting is needed
+    switch(sortOption.value){
+        case 'none':
+            sortedLibrary = library;
+            break;
+        case 'ascending':
+            sortedLibrary = library.sort( (a,b)=>{
+                return a.title.localeCompare(b.title);
+            });
+            break;
+        case 'descending':
+            sortedLibrary = library.sort( (a,b)=>{
+                return -1 * a.title.localeCompare(b.title);
+            });
+            break;
+        default:
+            sortedLibrary = library;
+    }
+
+    sortedLibrary.forEach((book) =>{
         let bookElement = createBookElement(book);
         bookDisplay.appendChild(bookElement);
     })
@@ -153,6 +176,11 @@ function loadExampleLibrary(amount = 6){
 
     refreshBookDisplay();
     toggleEmptyLibraryImg();
+}
+
+function sortAlphabetically(display){
+    library.sort();
+    refreshBookDisplay();
 }
 
 function toggleEmptyLibraryImg(){
