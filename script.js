@@ -121,6 +121,7 @@ function createBookElement(book){
     bookDiv.appendChild(genre);
     bookDiv.appendChild(summary);
     bookDiv.appendChild(readDiv);
+    bookDiv.dataset.index = library.indexOf(book);
 
     return bookDiv;
 }
