@@ -62,6 +62,11 @@ function clearForm(){
 }
 
 function refreshBookDisplay(){
+
+    while(bookDisplay.hasChildNodes()){
+        bookDisplay.firstChild.remove();
+    }
+
     library.forEach((book) =>{
         let bookElement = createBookElement(book);
         bookDisplay.appendChild(bookElement);
@@ -83,6 +88,11 @@ function createBookElement(book){
     let removeButton = document.createElement('button');
     removeButton.classList.add('remove-button');
     removeButton.textContent = 'X';
+    removeButton.addEventListener('click', (book) =>{
+        let index = removeButton.parentElement.parentElement.dataset.index;
+        removeBookFromlibrary(index);
+        refreshBookDisplay();
+    })
 
     bookTopDiv.appendChild(title);
     bookTopDiv.appendChild(removeButton);
