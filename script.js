@@ -1,6 +1,10 @@
 const sideCollar = document.querySelector('.side-collar');
 const side = document.querySelector('.side');
 const bookDisplay = document.querySelector('.book-display');
+const bookCount = document.querySelector('.count-span');
+const readCount = document.querySelector('.read-span');
+const unreadCount = document.querySelector('.unread-span');
+
 
 const sortOption = document.querySelector('select');
 
@@ -104,6 +108,15 @@ function refreshBookDisplay(){
         let bookElement = createBookElement(book);
         bookDisplay.appendChild(bookElement);
     })
+
+    refreshStats();
+}
+
+function refreshStats(){
+    bookCount.textContent = `${library.length}`;
+    readCount.textContent = `${library.filter((book) => book.read).length}`;
+    unreadCount.textContent = `${library.filter((book) => !book.read).length}`;
+
 }
 
 
@@ -158,6 +171,7 @@ function createBookElement(book){
         book.changeReadStatus();
         readDiv.classList.toggle('unread');
         readDiv.textContent = getBookReadStatus(book);
+        refreshStats();
     })
 
     bookDiv.appendChild(bookTopDiv);

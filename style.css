@@ -39,12 +39,35 @@ div{
     align-items: center;
 }
 
+
 .page-title{
+    margin-left: auto;
     font-size: 2.5rem;
 }
 
+
 .title-b{
     color: var(--light-purple);
+}
+
+.stats{
+    margin-left: auto;
+    margin-right: 2rem;
+    justify-self: end;
+    padding: 0.5rem;
+    border: 2px solid var(--light-purple);
+    border-radius: 10px;
+
+    min-width: 8rem;
+}
+
+.stats > div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.count-span{
+    
 }
 
 .sort-option{
