@@ -231,6 +231,9 @@ form.addEventListener('submit', (e)=>{
 
     //Clear form 
     clearForm();
+
+    //Collapse form
+    side.classList.toggle('active');
 })
 
 sortOption.addEventListener('click', refreshBookDisplay);
