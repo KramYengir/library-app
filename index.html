@@ -31,7 +31,7 @@
             </select>
         </div>
         <div class="main">
-            <div class="book-display"></div>
+            <div class="book-display empty"></div>
             <div class="side">
                 <div class="side-collar"><div>Add Book!</div></div>
                 <div class="side-panel">
@@ -56,7 +56,10 @@
                             <label for="summary">Summary:</label>
                             <textarea name="summary" id="summary" cols="30" rows="8" maxlength="100" placeholder="Short summary of the book..." required></textarea>
                         </div>
-                        <button id="add-book-button">Add Book</button>
+                        <div class="form-buttons">
+                            <button id="add-book-button">Add Book</button>
+                            <button id="load-button">Load Examples</button>
+                        </div>
                     </form>
                 </div>
             </div>
