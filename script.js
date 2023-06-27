@@ -194,7 +194,7 @@ function getBookReadStatus(book){
 }
 function loadExampleLibrary(amount = 6){
     for(let i=0; i<amount; i++){
-        let newBook = new Book('Jumanji', 'Dave Batista', 256, 'Comedy', 
+        let newBook = new Book('Jumanji '+(i+1), 'Dave Batista', 200+i, 'Comedy', 
                                 'Madcap comedy about a bunch of mad animals running around the place',
                                 false);
         library.push(newBook);
