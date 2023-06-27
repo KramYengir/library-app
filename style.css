@@ -7,16 +7,16 @@
     --dark-puple: rgb(70, 2, 95);
 
     --title-a-color: #5e5e5e;
-    --title-b-color: #8929ac;
+    --title-b-color: #322E64;
 
     --book-color: rgb(254, 253, 255);
-    --read-color: hwb(104 21% 7%);
+    --read-color: #35316db9;
     --unread-color: #42424244;
 
-    --book-display-background: #b51dec1a; 
+    --book-display-background: #5650af2f; 
     
-    --side-panel-background: rgba(71, 0, 97, 0.8);
-    --side-collar-background:  rgba(123, 0, 168, 0.651);
+    --side-panel-background: rgba(50, 46, 100, 0.95);
+    --side-collar-background: rgba(89, 83, 172, 0.8);
 }
 
 body{
@@ -46,11 +46,12 @@ input, .side-collar{
 .header{
     flex: 0.15;
     min-height: 12vh;
-    /* border-bottom: 2px solid var(--light-purple);
- */
+    /* border-bottom: 1px solid var(--title-b-color); */
+
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 2px -2px gray;
 }
 
 
@@ -86,7 +87,7 @@ input, .side-collar{
 
 .sort-option{
     /* background-color: #f1f1f1; */
-    background-color: #b51dec1a;
+    background-color: var(--book-display-background);
     padding-top: 1rem;
     padding-bottom: 0.5rem;
 }
@@ -225,6 +226,7 @@ input, .side-collar{
     justify-content: center;
     align-items: center;
     background-color: var(--read-color);
+    color: #f1f1f1;
     border-radius: 0 0 15px 0;
     text-transform: uppercase;
     transition: 0.3s;
@@ -233,6 +235,7 @@ input, .side-collar{
 
 .read-div.unread{
     background-color: var(--unread-color);
+    color: black;
     transition: 0.3s;
 }
 
@@ -327,7 +330,6 @@ input{
     padding-left: 0.6rem;
     /* background-color: rgb(240, 214, 255); */
     border-radius: 5px;
-    outline: invert;
 }
 
 textarea{
@@ -335,7 +337,7 @@ textarea{
     padding: 0.3rem;
 }
 
-#add-book-button{
+#add-book-button, #load-button{
     max-width: 50%;
     min-width: 30%;
     height: 2rem;
@@ -343,4 +345,10 @@ textarea{
     border-radius: 5px;
     text-transform: uppercase;
     font-weight: 600;
+}
+
+#load-button{
+    opacity: 1;
+    color: white;
+    background-color: var(--book-display-background);
 }
