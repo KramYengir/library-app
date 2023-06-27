@@ -316,6 +316,7 @@ form{
 label{
     color: aliceblue;
     text-transform: uppercase;
+    text-shadow: #322E64;
 }
 
 .input{
@@ -342,13 +343,15 @@ textarea{
     min-width: 30%;
     height: 2rem;
     justify-self: start;
-    border-radius: 5px;
+    border-radius: 8px;
     text-transform: uppercase;
     font-weight: 600;
+    border: none;
 }
 
 #load-button{
     opacity: 1;
     color: white;
+    margin-left: 1rem;
     background-color: var(--book-display-background);
 }
