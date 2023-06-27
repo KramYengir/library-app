@@ -16,6 +16,8 @@ const pagesInput = document.querySelector('#pages');
 const genreInput = document.querySelector('#genre');
 const summaryInput = document.querySelector('#summary');
 const addBookButton = document.querySelector('#add-book-button')
+const loadBooksButton = document.querySelector('#load-button')
+
 
 let library = [];
 
@@ -242,6 +244,13 @@ sideCollar.addEventListener('click', ()=>{
     side.classList.toggle('active');
     toggleEmptyLibraryImg();
 })
+
+loadBooksButton.addEventListener('click', (e)=>{
+    e.preventDefault();
+    loadExampleLibrary();
+    //Collapse form
+    side.classList.toggle('active');
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     toggleEmptyLibraryImg();
