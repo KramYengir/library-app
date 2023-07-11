@@ -1,4 +1,4 @@
-# The Odin Project Assignment - Library
+# The Odin Project - Library Assignment
 
 ***An assignemt to practice intermediate javascript lessons***
 
