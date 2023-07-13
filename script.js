@@ -21,13 +21,64 @@ const loadBooksButton = document.querySelector('#load-button')
 
 let library = [];
 
-let Book = function(title, author, pages, genre, summary, read){
+/* let Book = function(title, author, pages, genre, summary, read){
     this.title = title,
     this.author = author,
     this.pages = pages,
     this.genre = genre,
     this.summary = summary,
     this.read = read
+} */
+
+class Book{
+    constructor(title, author, pages, genre, summary, read){
+        this.title = title,
+        this.author = author,
+        this.pages = pages,
+        this.genre = genre,
+        this.summary = summary,
+        this.read = read
+    }
+
+    get title(){
+        return this._title;
+    }
+
+    get author(){
+        return this._author;
+    }
+
+    get pages(){
+        return this._pages;
+    }
+
+    get genre(){
+        return this._genre;
+    }
+
+    get summary(){
+        return this._summary;
+    }
+
+    set title(value){
+        this._title = value;
+    }
+
+    set author(value){
+        this._author = value;
+    }
+
+    set pages(value){
+        this._pages = value;
+    }
+
+    set genre(value){
+        this._genre = value;
+    }
+
+    set summary(value){
+        this._summary = value;
+    }
 }
 
 Book.prototype.changeReadStatus = function(){
